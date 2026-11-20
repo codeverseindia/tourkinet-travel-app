@@ -1,6 +1,6 @@
 # Tour Kinet Travel App
 
-The Travel App provides the Tour Kinet API client, package and blog services, destination and inquiry pages, route registration, SEO metadata, and default Bootstrap-based travel templates. It depends on `codeverseindia/tourkinet-lightphp-core:^1.0`; the Core owns routing, HTTP transport, security, configuration, caching, and rendering primitives.
+The Travel App provides the Tour Kinet API client, package and blog services, destination and inquiry pages, route registration, SEO metadata, and default Bootstrap-based travel templates. It depends on `codeverseindia/lightphp-core:^1.0`; the Core owns routing, HTTP transport, security, configuration, caching, and rendering primitives.
 
 ## Development
 
