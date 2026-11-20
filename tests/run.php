@@ -45,10 +45,16 @@ $assert(safe_image_url('javascript:alert(1)') === null, 'Unsafe media schemes ar
 $assert(safe_canonical_url('https://travel.example.test/package') !== null, 'HTTPS canonical URL is accepted');
 $assert(safe_canonical_url('javascript:alert(1)') === null, 'Unsafe canonical URL is rejected');
 
-$application = is_file($root . '/bootstrap/app.php')
-    ? require $root . '/bootstrap/app.php'
-    : Application::boot(dirname(__DIR__), []);
-$website = (array) $application->config()->get('website', []);
+$application = Application::boot(dirname(__DIR__), []);
+\TourKinet\TravelApp\TravelApplication::register($application);
+$website = [
+    'meta_description' => 'Thoughtfully planned travel experiences.',
+    'destinations' => [
+        ['name' => 'Himalayan Highlands', 'filter' => 'Himalayan Highlands', 'summary' => 'Mountain journeys.', 'image' => '/assets/images/destinations/highlands.svg'],
+        ['name' => 'Kerala Coast', 'filter' => 'Kerala Coast', 'summary' => 'Coastal journeys.', 'image' => '/assets/images/destinations/kerala.svg'],
+        ['name' => 'Rajasthan Heritage', 'filter' => 'Rajasthan Heritage', 'summary' => 'Heritage journeys.', 'image' => '/assets/images/destinations/rajasthan.svg'],
+    ],
+];
 $documentedPackage = [
     'package_hash' => 'pkg_sample',
     'package_code' => 'TOUR-SAMPLE',
@@ -72,6 +78,16 @@ $packagesHtml = $application->view()->renderPage('pages/packages', [
     'filters' => [],
 ]);
 $assert(str_contains($packagesHtml, 'Documented Tour') && str_contains($packagesHtml, 'Hill Town') && str_contains($packagesHtml, 'INR 12000.00'), 'Documented package fields render in the default view');
+$unsafePackage = $documentedPackage;
+$unsafePackage['title'] = '<script>alert(1)</script>';
+$unsafePackagesHtml = $application->view()->renderPage('pages/packages', [
+    'website' => $website,
+    'title' => 'Travel packages',
+    'packages' => ['data' => [$unsafePackage]],
+    'filters' => [],
+]);
+$assert(!str_contains($unsafePackagesHtml, '<script>alert(1)</script>')
+    && str_contains($unsafePackagesHtml, '&lt;script&gt;alert(1)&lt;/script&gt;'), 'Package listing escapes API-provided text');
 $destinations = is_array($website['destinations'] ?? null) ? $website['destinations'] : [];
 $homeHtml = $application->view()->renderPage('pages/home', [
     'website' => $website,
@@ -170,7 +186,7 @@ $assert(str_contains($blogHtml, 'Story SEO Title')
 $config = new Config([
     'app' => ['env' => 'local'],
     'tourkinet' => [
-        'api_url' => 'http://api.tourkinet.loc/api/v1',
+        'api_url' => 'https://api.tourkinet.com/api/v1',
         'api_key' => '',
         'endpoints' => ['packages' => '/packages'],
     ],
