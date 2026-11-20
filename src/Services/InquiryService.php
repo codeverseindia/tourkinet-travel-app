@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace TourKinet\TravelApp\Services;
 
-use TourKinet\LightPHP\Core\Request;
-use TourKinet\LightPHP\Security\RateLimiter;
+use CodeverseIndia\LightPHP\Core\Request;
+use CodeverseIndia\LightPHP\Security\RateLimiter;
 use TourKinet\TravelApp\Api\TourKinetClient;
 
 final class InquiryService

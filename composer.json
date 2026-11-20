@@ -7,7 +7,7 @@
         "php": "^8.5",
         "ext-curl": "*",
         "ext-json": "*",
-        "codeverseindia/lightphp-core": "^1.0"
+        "codeverseindia/lightphp-core": "dev-main"
     },
     "autoload": {
         "psr-4": {

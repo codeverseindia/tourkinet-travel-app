@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace TourKinet\TravelApp;
 
-use TourKinet\LightPHP\Application;
-use TourKinet\LightPHP\Http\HttpClient;
+use CodeverseIndia\LightPHP\Application;
+use CodeverseIndia\LightPHP\Http\HttpClient;
 use TourKinet\TravelApp\Api\TourKinetClient;
 use TourKinet\TravelApp\Controllers\BlogController;
 use TourKinet\TravelApp\Controllers\InquiryController;

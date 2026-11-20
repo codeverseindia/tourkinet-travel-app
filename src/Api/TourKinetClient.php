@@ -5,8 +5,8 @@ namespace TourKinet\TravelApp\Api;
 
 use JsonException;
 use RuntimeException;
-use TourKinet\LightPHP\Core\Config;
-use TourKinet\LightPHP\Http\HttpClient;
+use CodeverseIndia\LightPHP\Core\Config;
+use CodeverseIndia\LightPHP\Http\HttpClient;
 
 final class TourKinetClient
 {

@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace TourKinet\TravelApp\Services;
 
-use TourKinet\LightPHP\Cache\FileCache;
-use TourKinet\LightPHP\Core\Config;
+use CodeverseIndia\LightPHP\Cache\FileCache;
+use CodeverseIndia\LightPHP\Core\Config;
 use TourKinet\TravelApp\Api\TourKinetClient;
 
 final class PackageService

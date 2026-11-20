@@ -4,13 +4,13 @@ declare(strict_types=1);
 namespace TourKinet\TravelApp\Controllers;
 
 use DateTimeImmutable;
-use TourKinet\LightPHP\Application;
-use TourKinet\LightPHP\Core\Request;
-use TourKinet\LightPHP\Core\Response;
-use TourKinet\LightPHP\Http\HttpClient;
-use TourKinet\LightPHP\Security\Csrf;
-use TourKinet\LightPHP\Security\RateLimiter;
-use TourKinet\LightPHP\Security\Validator;
+use CodeverseIndia\LightPHP\Application;
+use CodeverseIndia\LightPHP\Core\Request;
+use CodeverseIndia\LightPHP\Core\Response;
+use CodeverseIndia\LightPHP\Http\HttpClient;
+use CodeverseIndia\LightPHP\Security\Csrf;
+use CodeverseIndia\LightPHP\Security\RateLimiter;
+use CodeverseIndia\LightPHP\Security\Validator;
 use TourKinet\TravelApp\Services\InquiryService;
 use TourKinet\TravelApp\Services\PackageService;
 

@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace TourKinet\TravelApp\Controllers;
 
-use TourKinet\LightPHP\Application;
-use TourKinet\LightPHP\Core\Request;
-use TourKinet\LightPHP\Core\Response;
+use CodeverseIndia\LightPHP\Application;
+use CodeverseIndia\LightPHP\Core\Request;
+use CodeverseIndia\LightPHP\Core\Response;
 use TourKinet\TravelApp\Services\PackageService;
 
 final class PageController

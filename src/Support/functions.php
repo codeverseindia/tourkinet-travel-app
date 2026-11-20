@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-use TourKinet\LightPHP\Support\Helpers;
+use CodeverseIndia\LightPHP\Support\Helpers;
 
 if (!function_exists('api_items')) {
     function api_items(array $response): array

@@ -7,10 +7,10 @@ $autoload = is_file($root . '/vendor/autoload.php')
     : dirname(__DIR__) . '/vendor/autoload.php';
 require $autoload;
 
-use TourKinet\LightPHP\Cache\FileCache;
-use TourKinet\LightPHP\Application;
-use TourKinet\LightPHP\Core\Config;
-use TourKinet\LightPHP\Http\HttpClient;
+use CodeverseIndia\LightPHP\Cache\FileCache;
+use CodeverseIndia\LightPHP\Application;
+use CodeverseIndia\LightPHP\Core\Config;
+use CodeverseIndia\LightPHP\Http\HttpClient;
 use TourKinet\TravelApp\Api\TourKinetClient;
 use TourKinet\TravelApp\Services\PackageService;
 

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace TourKinet\TravelApp\Providers;
 
-use TourKinet\LightPHP\Core\Router;
+use CodeverseIndia\LightPHP\Core\Router;
 use TourKinet\TravelApp\Controllers\BlogController;
 use TourKinet\TravelApp\Controllers\InquiryController;
 use TourKinet\TravelApp\Controllers\PackageController;
