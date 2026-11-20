@@ -1,6 +1,6 @@
 # Tour Kinet Travel App
 
-The Travel App provides the Tour Kinet API client, package and blog services, destination and inquiry pages, route registration, SEO metadata, and default Bootstrap-based travel templates. It depends on `codeverseindia/lightphp-core:^1.0`; the Core owns routing, HTTP transport, security, configuration, caching, and rendering primitives.
+The Travel App provides the Tour Kinet API client, package and blog services, destination and inquiry pages, route registration, SEO metadata, and default Bootstrap-based travel templates. It depends on `codeverseindia/lightphp-core:^1.1`; the Core owns routing, HTTP transport, security, configuration, caching, and rendering primitives.
 
 ## Development
 
@@ -21,4 +21,4 @@ Templates under `resources/views/` are package defaults. The Core resolves clien
 
 ## Release
 
-Export `packages/travel-app` as a standalone repository with `composer.json` at its root, then tag its releases independently from LightPHP Core. The package's `^1.0` Core requirement must remain compatible with the minimum Core release. Do not publish or push without explicit approval.
+Export `packages/travel-app` as a standalone repository with `composer.json` at its root, then tag its releases independently from LightPHP Core. The `^1.1` Core requirement targets the first stable release with the `CodeverseIndia\LightPHP` namespace.
